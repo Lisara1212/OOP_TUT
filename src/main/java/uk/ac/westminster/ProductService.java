@@ -37,8 +37,8 @@ public class ProductService {
         return products.stream()
                 .filter(p -> p.getName().contains(name))
                 .toList();
-   }
 
+}
 
 
 
