@@ -1,25 +1,29 @@
 package uk.ac.westminster;
 
-public class Product {
+public abstract class Product {
     private Long id;
     private String name;
     private double price;
 
 
-    public  Product() {
+    public Product() {
     }
+
     public Product(Long id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
     }
+
     public Long getId() {
         return id;
 
     }
+
     public String getName() {
         return name;
     }
+
     public double getPrice() {
         return price;
     }
@@ -27,10 +31,21 @@ public class Product {
     public void setId(Long id) {
         this.id = id;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public void setPrice(double price) {
         this.price = price;
     }
+
+// public String String() {
+//        return "Product " + id + " " + name + " " + price;
+// }
+    public abstract String getSummary();
+
+    public abstract void applyDiscountedPrice(double rate);
+
+    public abstract double getDiscountedPrice();
 }

@@ -1,6 +1,8 @@
 package uk.ac.westminster;
 
-public class DigitalProduct extends Product {
+import org.springframework.context.ApplicationListener;
+
+public class DigitalProduct extends Product implements Discountable{
     private String downloadUrl;
     private double filesizeMB;
 
@@ -25,8 +27,26 @@ public class DigitalProduct extends Product {
         this.filesizeMB = filesizeMB;
     }
 
+    @Override
+    public String getSummary(){
+        return "Digital : " + getName() + "| Download : " + downloadUrl;
+    }
+
+    @Override
+    public void applyDiscountedPrice(double rate) {
+
+    }
+
+    @Override
+    public double getDiscountedPrice() {
+        return 0;
+    }
 
 
+    @Override
+    public void applyDiscount(double rate) {
+
+    }
 }
 
 
